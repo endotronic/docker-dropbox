@@ -1,21 +1,6 @@
 # 🐳 Dropbox Docker Image
 
-_This repository provides the [`otherguy/dropbox`][dockerhub] image_
-
-[![Docker Pulls](https://img.shields.io/docker/pulls/otherguy/dropbox)][dockerhub]
-[![Docker Stars](https://img.shields.io/docker/stars/otherguy/dropbox)][dockerhub]
-[![GitHub issues](https://img.shields.io/github/issues/otherguy/docker-dropbox)][issues]
-[![Travis](https://img.shields.io/travis/com/otherguy/docker-dropbox)][travis]
-[![MicroBadger Layers](https://img.shields.io/microbadger/layers/otherguy/dropbox)][microbadger]
-[![GitHub stars](https://img.shields.io/github/stars/otherguy/docker-dropbox?color=violet)][stargazers]
-[![MIT License](https://img.shields.io/github/license/otherguy/docker-dropbox?color=orange)][license]
-
-[dockerhub]: https://hub.docker.com/r/otherguy/dropbox/
-[license]: https://tldrlegal.com/license/mit-license
-[travis]: https://travis-ci.com/otherguy/docker-dropbox
-[microbadger]: https://microbadger.com/images/otherguy/dropbox
-[stargazers]: https://github.com/otherguy/docker-dropbox/stargazers
-[issues]: https://github.com/otherguy/docker-dropbox/issues
+Fork of [`otherguy/docker-dropbox`](https://github.com/otherguy/docker-dropbox) with minor changes.
 
 Run Dropbox inside a Docker container. Supports local host folder mount or inter-container
 linking via `--volumes-from`.
@@ -84,7 +69,7 @@ The example below uses `id -u` and `id -g` to retrieve the current user's user i
       -v "/path/to/local/settings:/opt/dropbox/.dropbox" \
       -v "/path/to/local/dropbox:/opt/dropbox/Dropbox" \
       [...]
-      otherguy/dropbox:latest
+      [image]
 
 ### Time Zones
 
@@ -100,7 +85,7 @@ If you're on Linux 🐧, you can mount your `/etc/timezone` and `/etc/localtime`
       -v "/etc/timezone:/etc/timezone" \
       -v "/etc/localtime:/etc/localtime" \
       [...]
-      otherguy/dropbox:latest
+      [image]
 
 If you are on macOS or Linux, getting your current timezone and passing it into the container as an environment
 variable, is the simplest way.
@@ -108,7 +93,7 @@ variable, is the simplest way.
     $ docker run --name=dropbox \
       -e "TZ=$(readlink /etc/localtime | sed 's#^.*/zoneinfo/##')" \
       [...]
-      otherguy/dropbox:latest
+      [image]
 
 ### Enable LAN Sync
 
@@ -117,7 +102,7 @@ Using `--net="host"` allows Dropbox to utilize [local LAN sync](https://help.dro
     $ docker run --name=dropbox \
       --net="host" \
       [...]
-      otherguy/dropbox:latest
+      [image]
 
 ### Linking Dropbox Account
 
@@ -198,9 +183,10 @@ From [Troubleshoot Dropbox syncing issues](https://help.dropbox.com/installs-int
 
 ## 🚧 Contributing
 
-Bug reports and pull requests are welcome on GitHub at [`otherguy/docker-dropbox`](https://github.com/otherguy/docker-dropbox).
+Bug reports and pull requests are welcome on GitHub at [`endotronic/docker-dropbox`](https://github.com/endotronic/docker-dropbox) or its close parent [`otherguy/docker-dropbox`](https://github.com/otherguy/docker-dropbox).
 
 ## ♥️ Acknowledgements
 
+- [Alexander Graf](https://github.com/otherguy) for their work in [`otherguy/docker-dropbox`](https://github.com/otherguy/docker-dropbox/)
 - [Jan Broer](https://github.com/janeczku) for the original repository [`janeczku/dropbox`](https://hub.docker.com/r/janeczku/dropbox/)
 - [Tony Pan](https://github.com/tcpan) for local timezone support ([`#3`](https://github.com/otherguy/docker-dropbox/pull/3))

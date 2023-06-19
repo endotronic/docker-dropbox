@@ -1,9 +1,6 @@
 # Based on Ubuntu 21.10
 FROM ubuntu:21.10
 
-# Maintainer
-LABEL maintainer "Alexander Graf <alex@otherguy.io>"
-
 # Required to prevent warnings
 ARG DEBIAN_FRONTEND=noninteractive
 ARG DEBCONF_NONINTERACTIVE_SEEN=true
